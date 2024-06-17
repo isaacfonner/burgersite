@@ -41,7 +41,7 @@
     <body>
         <main>
             <h1>Cheeseburger Network</h1>
-            <button onclick="copyIp()">
+            <button onclick="copyIp()" id="guh">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -57,7 +57,7 @@
                     />
                 </svg>
                 <!-- Remember to change the ip in the copyIp function -->
-                wss://cbnet.lol
+                if-you-see-this-script-aint-working
             </button>
             <p>
                 The Cheeseburger Network is a eaglercraft server designed for community and fun,
@@ -68,13 +68,16 @@
                 <a href="" title="">Store (coming soon)</a>
                 <a href="https://servers.eaglercraft.com/servers/2497a4fd-4da7-403b-8841-b8e6902c719e" title="">Vote</a>
                 <a href="https://dsc.gg/cheeseburgersmp" title="">Discord</a>
-                <a href="https://cbnet.lol" title="" target="_blank">PLAY!</a>
+                <a href="/client" title="" target="_blank">PLAY!</a>
             </nav>
         </main>
         <script>
+            let g = document.getElementById('guh');
+            g.innerText = `wss://${location.host}`
             function copyIp() {
+                const w = location.host;
                 navigator.clipboard
-                    .writeText("wss://cbnet.lol")
+                    .writeText(`wss://${w}`)
                     .catch((error) => {
                         console.error(
                             `Failed to copy "${text}" to clipboard: ${error}`
